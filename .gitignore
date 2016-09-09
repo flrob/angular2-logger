@@ -27,3 +27,6 @@ demos/*/app/**/*.map
 demos/*/app/**/*.d.ts
 
 .idea/workspace.xml
+
+# Visual Studio Code
+.vscode
