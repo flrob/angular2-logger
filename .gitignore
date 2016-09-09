@@ -1,6 +1,3 @@
-
-npm-debug.log*
-
 # Dependency directory
 node_modules
 typings
@@ -11,22 +8,19 @@ typings
 # Optional REPL history
 .node_repl_history
 
+# output/generated
 dist
 bundles
+npm-debug.log*
+**/*.js
+**/*.js.map
+**/*.d.ts
 
-/*.js
-/*.js.map
-#/*.d.ts
-
-app/**/*.js
-app/**/*.js.map
-app/**/*.d.ts
-
-demos/*/app/**/*.js
-demos/*/app/**/*.map
-demos/*/app/**/*.d.ts
-
+# Workspace Settings
 .idea/workspace.xml
-
-# Visual Studio Code
 .vscode
+
+# DO NOT ignore (must come last)
+!demos/*/systemjs.config.js
+!src/typings.d.ts
+!index.d.ts

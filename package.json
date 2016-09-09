@@ -6,19 +6,23 @@
     "type": "git",
     "url": "git+https://github.com/code-chunks/angular2-logger"
   },
+  "main": "bundles/angular2-logger.sys.js",
+  "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
+
   "scripts": {
-    "tsc": "tsc",
-    "typings": "typings",
+    "tsc": "tsc --help",
+    "typings": "npm run clean && npm run precompile",
     "uglifyjs": "uglifyjs",
     "tslint": "tslint *.ts src/**/*.ts",
     "lint": "npm run tslint",
     "prepublish": "npm run build",
-    "clean": "",
+    "clean": "del-cli dist/ bundles/ **/*{.js,.map,.d.ts} !index.d.ts !src/typings.d.ts !demos/*/systemjs.config.js !{node_modules,typings}/** ",
     "precompile": "typings install",
     "compile": "npm run compile:es6 && npm run compile:umd && npm run compile:sys",
-    "compile:sys": "tsc -p src/tsconfig.json -m system --outFile bundles/angular2-logger.sys.js",
-    "compile:umd": "tsc -p src/tsconfig.json -m umd --outDir dist/umd",
-    "compile:es6": "tsc -p src/tsconfig.json --declaration",
+    "compile:es6": "tsc -p src/tsconfig.json --outDir dist --declaration",
+    "compile:umd": "tsc -p src/tsconfig.json -m umd -t es5 --outDir dist/umd",
+    "compile:sys": "tsc -p src/tsconfig.json -m system -t es5 --outFile bundles/angular2-logger.sys.js",
     "pretest": "npm run lint",
     "test": "echo tests pending...",
     "prebuild": "npm run clean && npm run compile && npm run test",
@@ -69,20 +73,20 @@
   "homepage": "https://github.com/code-chunks/angular2-logger#readme",
   "dependencies": {},
   "devDependencies": {
-    "rimraf": "^2.5.2",
-    "tslint": "^3.8.1",
-    "typescript": "1.8.10",
-    "typings": "^1.0.3",
-    "uglify-js": "^2.6.2",
     "@angular/common": "2.0.0-rc.5",
     "@angular/compiler": "2.0.0-rc.5",
     "@angular/core": "2.0.0-rc.5",
     "@angular/platform-browser": "2.0.0-rc.5",
     "@angular/platform-browser-dynamic": "2.0.0-rc.5",
-    "systemjs": "0.19.37",
     "core-js": "^2.4.0",
+    "del-cli": "0.2.0",
     "reflect-metadata": "^0.1.3",
     "rxjs": "5.0.0-beta.6",
+    "systemjs": "0.19.37",
+    "tslint": "^3.8.1",
+    "typescript": "1.8.10",
+    "typings": "^1.0.3",
+    "uglify-js": "^2.6.2",
     "zone.js": "^0.6.12"
   },
   "peerDependencies": {
@@ -91,6 +95,5 @@
     "@angular/core": "2.0.0-rc.5",
     "@angular/platform-browser": "2.0.0-rc.5",
     "@angular/platform-browser-dynamic": "2.0.0-rc.5"
-  },
-  "main": "core.js"
+  }
 }
