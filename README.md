@@ -1,10 +1,14 @@
+# [Summary of Changes](https://github.com/TheFirstDeity/angular2-logger/blob/master/docs/dev/CHANGES.md)
+https://github.com/TheFirstDeity/angular2-logger/blob/master/docs/dev/CHANGES.md
+
+---
+
 # Angular2-Logger
 
 [![Build Status](https://travis-ci.org/code-chunks/angular2-logger.svg?branch=master)](https://travis-ci.org/code-chunks/angular2-logger)
 [![npm version](https://badge.fury.io/js/angular2-logger.svg)](https://badge.fury.io/js/angular2-logger)
 [![Join the chat at https://gitter.im/code-chunks/angular2-logger](https://badges.gitter.im/code-chunks/angular2-logger.svg)](https://gitter.im/code-chunks/angular2-logger?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/code-chunks/angular2-logger/master/LICENSE)
-[![Support](https://supporter.60devs.com/api/b/cjv93jwfwck3yp8z2mn1d9gay)](https://supporter.60devs.com/give/cjv93jwfwck3yp8z2mn1d9gay)
 
 ## What is it?
 
@@ -17,13 +21,13 @@ This is a work in progress and is not ready for production, use with care, the A
 ### Quickstart
 
 1. Install the npm module.
-    
+
 	npm install --save angular2-logger
 
 2. Add the `angular2-logger` library to your app. If you are following the [Angular 2's Quickstart Guide](https://angular.io/docs/ts/latest/quickstart.html) it should be something like this:
 
 	In `systemjs.config.js`:
-	
+
 		// map tells the System loader where to look for things
 		var map = {
 			'app':                        'app', // 'dist',
@@ -32,7 +36,7 @@ This is a work in progress and is not ready for production, use with care, the A
 			'rxjs':                       'node_modules/rxjs',
 			'angular2-logger':            'node_modules/angular2-logger' // ADD THIS
 		};
-		
+
 		//packages tells the System loader how to load when no filename and/or no extension
 		var packages = {
 			'app':                        { main: 'main.ts',  defaultExtension: 'ts' },
@@ -43,14 +47,14 @@ This is a work in progress and is not ready for production, use with care, the A
 
 
 3. Setup the Provider.
-    
+
     In `app.module.ts`:
 
         import { NgModule }      from '@angular/core';
         import { BrowserModule } from '@angular/platform-browser';
         import { AppComponent }  from './app.component';
         import { Logger } from "angular2-logger/core"; // ADD THIS
-    
+
         @NgModule({
             imports:      [ BrowserModule ],
             declarations: [ AppComponent ],
@@ -73,8 +77,8 @@ This is a work in progress and is not ready for production, use with care, the A
 				this._logger.log('This is a priority level 5 log message...');
 			}
 		}
-    
-By default the logger level will be set to `Level.WARN`, so you'll only see Warning and Error messages. 
+
+By default the logger level will be set to `Level.WARN`, so you'll only see Warning and Error messages.
 
 ### Going deeper...
 
@@ -82,12 +86,12 @@ In order to see all of the messages you just need to change the logger message h
 
 - Dynamically using the console:
 
-        logger.level = logger.Level.LOG; // same as: logger.level = 5;      
-    
+        logger.level = logger.Level.LOG; // same as: logger.level = 5;
+
 - Or using one of the predefined configuration providers:
 
         import {LOG_LOGGER_PROVIDERS} from "angular2-logger/core";
-       
+
         @NgModule({
             ...
             providers:    [ LOG_LOGGER_PROVIDERS ]
@@ -116,7 +120,7 @@ If the Providers included don't meet your needs you can configure the default lo
 
     @NgModule({
         ...
-        providers:    [ 
+        providers:    [
             { provide: Options, useValue: { store: false } },
             Logger
         ]
@@ -163,19 +167,19 @@ You can also override the default configuration options by extending the Options
     ...
     @NgModule({
         ...
-        providers:    [ 
+        providers:    [
             { provide: Options, useClass: CustomLoggerOptions },
             Logger
         ]
     })
-   
+
 Class names like `Options` and `Level` might be too common, if you get a conflict you can rename them like this:
 
     import { Logger, Options as LoggerOptions, Level as LoggerLevel } from "angular2-logger/core";
 
     @NgModule({
         ...
-        providers:    [ 
+        providers:    [
             { provide: LoggerOptions, useValue: { level: LoggerLevel.WARN } }
         ]
     })
@@ -212,8 +216,8 @@ Done.
 The codebase was updated to handle the breaking changes on Angular2's Release Candidate 5.
 **Make sure you don't upgrade to this version if you haven't upgraded Angular2 to at least `2.0.0-rc.5`**
 
-- Quickstart guide now follows the pattern in Angular 2's Quickstart to add the references to other libs in `systemjs.config.js`. 
-However if you still want to do it the old way by adding the system bundle, you can still do so, except now its called `bundles/angular2-logger.sys.min.js`. 
+- Quickstart guide now follows the pattern in Angular 2's Quickstart to add the references to other libs in `systemjs.config.js`.
+However if you still want to do it the old way by adding the system bundle, you can still do so, except now its called `bundles/angular2-logger.sys.min.js`.
 
 ## Breaking changes on 0.3.0
 The codebase was updated to handle the breaking changes on Angular2's Release Candidate.
