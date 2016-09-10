@@ -23,4 +23,3 @@ npm-debug.log*
 # DO NOT ignore (must come last)
 !demos/*/systemjs.config.js
 !src/typings.d.ts
-!index.d.ts
