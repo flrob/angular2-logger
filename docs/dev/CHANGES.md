@@ -1,12 +1,14 @@
 # Status
 
 #### **Requirements**
+- [ ] Tested with both es5 & es6 project
+- [ ] Demos, make them to play
 - [ ] Satisfied with the file/directory structure
 - [ ] All files have cool little headings and stuff
 
 #### **Experiments**
-- [ ] Update Typescript dep
 - [ ] Update angular dep to `rc6`
+- [ ] Update Typescript dep
 - [ ] Refactor for ts2 features
 
 # Changes
