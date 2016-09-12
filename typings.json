@@ -1,5 +1,6 @@
 {
   "globalDevDependencies": {
+    "core-js": "github:DefinitelyTyped/DefinitelyTyped/core-js/core-js.d.ts#23c9f2230960c4a9b83e4297471d082a27d02b74",
     "jasmine": "github:DefinitelyTyped/DefinitelyTyped/jasmine/jasmine.d.ts#d594ef506d1efe2fea15f8f39099d19b39436b71",
     "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts#23c9f2230960c4a9b83e4297471d082a27d02b74"
   }
