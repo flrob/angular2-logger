@@ -59,7 +59,7 @@ export class Logger {
 
     }
 
-    private _loadLevel = (): Level => localStorage.getItem( this._storeAs );
+    private _loadLevel = (): Level => +localStorage.getItem( this._storeAs );
     private _storeLevel(level: Level) { localStorage[ this._storeAs ] = level; }
 
     error(message?: any, ...optionalParams: any[]) {
