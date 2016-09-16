@@ -212,6 +212,10 @@ Done.
 - [ ] No coding required Dashboard UI to handle loggers.
 - [ ] Automatize definition files. Waiting for https://github.com/Microsoft/TypeScript/issues/4433 .
 
+## Breaking changes on 0.5.0
+The codebase was updated to handle the breaking changes on Angular2's Final.
+**Make sure you don't upgrade to this version if you haven't upgraded Angular2 to at least `2.0.0`**
+
 ## Breaking changes on 0.4.0
 The codebase was updated to handle the breaking changes on Angular2's Release Candidate 5.
 **Make sure you don't upgrade to this version if you haven't upgraded Angular2 to at least `2.0.0-rc.5`**
